@@ -1,6 +1,6 @@
 # CLICK Integration PHP
 This is a capable to "CLICK" integration library, written in PHP.
-This library is an easy to learn, powerful and rapid php integration library.
+This library is an easy to use, powerful and rapid php integration library.
 
 ## Installation via Composer
 ```
