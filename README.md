@@ -1,5 +1,5 @@
 # CLICK Integration PHP
-This is a capable to "CLICK" integration library, written in PHP.
+This is a capable to `"CLICK"` integration library, written in `PHP`.
 This library is an easy to use, powerful and rapid php integration library.
 
 ## Installation via Composer
@@ -34,7 +34,7 @@ composer install
 
 ## Documentation
 ### Configuration
-Your con setting your configurations via click/configs.php file.
+Your can set your configurations via `click/configs.php` file.
 #### Click configuration
 ```php
 return [
@@ -42,10 +42,10 @@ return [
     'provider' => [
         'endpoint' => 'https://api.click.uz/v2/merchant/',
         'click' => [
-            'merchant_id' => 3233,
-            'service_id' => 12713,
-            'user_id' => 11154,
-            'secret_key' => '6ZRZmAt8OG'
+            'merchant_id' => 1111,
+            'service_id' => 2222,
+            'user_id' => 3333,
+            'secret_key' => 'AAAAAAAA'
         ]
     ]
     ...
@@ -67,12 +67,12 @@ return [
 
 ## Quick Start
 ### 1) Create Model
-You can you the \cick\models\Payments model
+You can you the `\cick\models\Payments` model
 ```php
 use click\models\Payments;
 $model = new Payments();
 ```
-Or can create yourself payments model via \click\models\Payments class
+Or can create yourself payments model via `\click\models\Payments` class
 ```php
 use click\models\Payments;
 class MyPayments extends Payments{
