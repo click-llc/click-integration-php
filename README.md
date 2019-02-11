@@ -71,14 +71,20 @@ $model = new MyPayments();
 #### SHOP Api methods
 Prepare
 ```php
-$model->prepare();
+$model->prepare([
+    ...
+]);
 ```
 Complete
 ```php
-$model->complete();
+$model->complete([
+    ...
+]);
 ```
 
 #### Merchant Api methods
+Note : All of the merchant api methods return the CLICK-MERCHANT-API response
+ 
 Create invoice
 ```php
 $model->create_invoice([
@@ -144,6 +150,7 @@ $model->cancel([
     'payment_id' => 1111
 ]);
 ```
+
 #### 2) Create the application for rest api
 ```php
 use click\applications\Application;
