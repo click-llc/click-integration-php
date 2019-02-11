@@ -83,8 +83,8 @@ $model->complete([
 ```
 
 #### Merchant Api methods
-Note : All of the merchant api methods return the CLICK-MERCHANT-API response
- 
+Note : All of the merchant api methods return the CLICK-MERCHANT-API response as array-like
+
 Create invoice
 ```php
 $model->create_invoice([
@@ -150,6 +150,36 @@ $model->cancel([
     'payment_id' => 1111
 ]);
 ```
+
+#### 2) Overwrite the some methods over the Payments
+```php
+use click\models\Payments;
+class MyPayments extends Payments{
+    public function on_invoice_creating($data){
+        ...
+        $response = $this->client->request('POST', 'invoice/create', [
+            ...
+        ]);
+        ...
+        return $response;
+    }
+
+    public function on_invoice_created($request, $response, $token){
+        ...
+        if($response->getStatusCode() == 200){
+            $result = (array)json_decode((string) $response->getBody());
+            ...
+            $this->model->update_by_token($token, [
+                ...
+            ]);
+            ...
+        }
+        ...
+        return $result;
+    }
+}
+```
+
 
 #### 2) Create the application for rest api
 ```php

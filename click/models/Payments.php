@@ -30,7 +30,7 @@ use click\models\BasePayments;
  *          return $response;
  *      }
  *      
- *      public function on_invoice_created($request, $response, $payment_id){
+ *      public function on_invoice_created($request, $response, $token){
  *          ...
  *          if($response->getStatusCode() == 200){
  *              $result = (array)json_decode((string) $response->getBody());
