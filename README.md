@@ -67,7 +67,7 @@ return [
 
 ## Quick Start
 ### 1) Create Model
-You can you the `\cick\models\Payments` model
+You can use the `\cick\models\Payments` model
 ```php
 use click\models\Payments;
 $model = new Payments();
