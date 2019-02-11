@@ -25,7 +25,7 @@ class BasePayments extends \click\models\BasicPaymentMethods{
      * @param payment array-like
      * @return response boolean|null
      */
-    protected function on_user_is_exists($payment){
+    protected function on_user_is_exist($payment){
         return null;
     }
 

@@ -64,7 +64,7 @@ class BasicPaymentsErrors{
         }
 
         // check to user is exits
-        $is_exist_user = $this->on_user_is_exists($payment);
+        $is_exist_user = $this->on_user_is_exist($payment);
         if($is_exist_user != null && $is_exist_user == false){
             // return response array-like
             return [
