@@ -63,10 +63,10 @@ class Application{
                 // getting the response of create invoice method
                 $this->response($model->create_invoice()); break;
             case '/invoice/check':
-                // getting the response of clikc invoice method
+                // getting the response of click invoice method
                 $this->response($model->check_invoice()); break;
             case '/payment/status':
-                // getting the response of clikc payment id method
+                // getting the response of click payment id method
                 $this->response($model->check_payment_id()); break;
             case '/payment/merchant_train_id':
                 // getting the response of merchant trans id

@@ -234,8 +234,8 @@ class MyPayments extends Payments{
     }
 }
 ```
-
-#### 2) Create the application for rest api
+## Advanced
+### 1) Create the application for rest api
 ```php
 use click\applications\Application;
 use click\models\Payments;
@@ -246,7 +246,7 @@ $application = new Application([
 ]);
 ```
 
-#### 3) Create the application with application session for authtorization via token
+### 2) Create the application with application session for authtorization via token
 ```php
 use click\applications\Application;
 use click\models\Payments;
@@ -259,3 +259,17 @@ Application::session('<YOUR_AUTH_TOKEN>', ['/prepare', '/complete'], function(){
     $application->run();
 });
 ```
+#### SHOP Api methods
+1) `/prepare` for prepare
+2) `/prepare` for prepare
+
+#### Merchant Api methods
+1) `/invoice/create` for create invoice
+2) `/invoice/check` for check invoice
+3) `/payment/status` for check payment status via payment_id
+4) `/payment/merchant_train_id` for check payment status via merchant_trans_id
+5) `/cancel` for cancel payment
+6) `/card/create` for create card token
+7) `/card/verify` for verify card token
+8) `/card/payment` for payment with card token
+9) `/card/delete` for delete card token
