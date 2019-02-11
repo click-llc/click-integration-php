@@ -1,0 +1,19 @@
+{
+    "name": "click/module",
+    "description": "The library to integration with click",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "click\\" : "click/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Firdavs Beknazarov",
+            "email": "tensor2flow@gmail.com"
+        }
+    ]
+}
