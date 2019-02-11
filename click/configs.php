@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'type' => 'json',
     'provider' => [
         'endpoint' => 'https://api.click.uz/v2/merchant/',
         'click' => [
