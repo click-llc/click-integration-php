@@ -337,24 +337,24 @@ class BasePayments extends \click\models\BasicPaymentMethods{
     }
 
     /**
-     * @name on_status_with_merchant_trans_id method
+     * @name on_with_merchant_trans_id method
      * @param data array-like
      * @return response \GuzzleHttp\Client object
      */
-    protected function on_status_checking_with_merchant_trans_id($data){
+    protected function on_checking_with_merchant_trans_id($data){
         $url = 'payment/status_by_mti/' . $data['service_id'] . '/' . $data['merchant_trans_id'];
         $response = $this->client->request('DELETE', $url);
         return $response;
     }
 
     /**
-     * @name on_status_with_merchant_trans_id
+     * @name on_with_merchant_trans_id
      * @param request array-like
      * @param response array-like
      * @param token string
      * @return response array-like|null
      */
-    protected function on_status_checked_with_merchant_trans_id($request, $response, $token){
+    protected function on_checked_with_merchant_trans_id($request, $response, $token){
         if($response->getStatusCode() == 200){
             $result = (array)json_decode((string) $response->getBody());
             if((int)$result['error_code'] == 0){

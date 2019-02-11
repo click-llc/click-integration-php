@@ -453,9 +453,9 @@ class Payments extends BasePayments{
             'merchant_trans_id' => $request['merchant_trans_id']
         ];
         // send the request to click
-        $response = $this->on_status_checking_with_merchant_trans_id($json);
+        $response = $this->on_checking_with_merchant_trans_id($json);
         // preapre the data to response
-        $result = $this->on_status_checked_with_merchant_trans_id($json, $response, $request['token']);
+        $result = $this->on_checked_with_merchant_trans_id($json, $response, $request['token']);
         // display the result if it will be nan-null
         if($result != null){
             return $result;
