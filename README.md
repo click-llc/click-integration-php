@@ -91,6 +91,73 @@ $application = new Application([
 ]);
 ```
 
+#### Methods of Payments
+Create invoice
+```php
+$model->create_invoice([
+    'token' => 'aaaa-bbbb-cccc-ddddddd',
+    'phone_number' => '998112222222'
+]);
+```
+Check invoice status
+```php
+$model->check_invoice([
+    'token' => 'aaaa-bbbb-cccc-ddddddd',
+    'invoice_id' => 2222
+]);
+```
+Create card token
+```php
+$model->create_card_token([
+    'token' => 'aaaa-bbbb-cccc-ddddddd',
+    'card_number' => 'AAAA-BBBB-CCCC-DDDD',
+    'expire_date' => 'BBEE',
+    'temporary' => 1
+]);
+```
+Verify card token
+```php
+$model->verify_card_token([
+    'token' => 'aaaa-bbbb-cccc-ddddddd',
+    'sms_code' => '12345'
+]);
+```
+Payment with card token
+```php
+$model->payment_with_card_token([
+    'token' => 'aaaa-bbbb-cccc-ddddddd',
+    'card_token' => 'AAAAAA-BBBB-CCCC-DDDDDDD'
+]);
+```
+Delete card token
+```php
+$model->delete_card_token([
+    'token' => 'aaaa-bbbb-cccc-ddddddd',
+    'card_token' => 'AAAAAA-BBBB-CCCC-DDDDDDD'
+]);
+```
+Check payment status by `payment_id`
+```php
+$model->check_payment([
+    'token' => 'aaaa-bbbb-cccc-ddddddd',
+    'payment_id' => 1111
+]);
+```
+Check payment status by `merchant_trans_id`
+```php
+$model->merchant_trans_id([
+    'token' => 'aaaa-bbbb-cccc-ddddddd',
+    'merchant_trans_id' => 1111
+]);
+```
+Cancel payment (reversal)
+```php
+$model->cancel([
+    'token' => 'aaaa-bbbb-cccc-dddddddd',
+    'payment_id' => 1111
+]);
+```
+
 #### 3) Create the application with application session for authtorization via token
 ```php
 use click\applications\Application;
