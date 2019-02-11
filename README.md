@@ -199,6 +199,22 @@ List of the Payments methods
 8) `on_payment_checking` and `on_payment_checked` for check payment status by merchant_id
 9) `on_checking_with_merchant_trans_id` and `on_checked_with_merchant_trans_id` for check payment status by merchant_trans_id
 
+If you want check the payment user to exist, complete
+this method
+
+```php
+use click\models\Payments;
+class MyPayments extends Payments{
+    /**
+     * @name on_user_is_exists method
+     * @param payment array-like
+     * @return response boolean|null
+     */
+    protected function on_user_is_exists($payment){
+        ...
+    }
+}
+```
 
 #### 2) Create the application for rest api
 ```php
