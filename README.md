@@ -65,8 +65,8 @@ return [
 ]
 ```
 
-## Quick Start
-### 1) Create Model
+### Quick Start
+#### 1) Create Model
 You can use the `\cick\models\Payments` model
 ```php
 use click\models\Payments;
@@ -79,7 +79,7 @@ class MyPayments extends Payments{
     ...
 }
 ```
-### Create the application for rest api
+#### 2) Create the application for rest api
 ```php
 use click\applications\Application;
 use click\models\Payments;
@@ -90,7 +90,7 @@ $application = new Application([
 ]);
 ```
 
-### Create the application with application session for authtorization via token
+#### 3) Create the application with application session for authtorization via token
 ```php
 use click\applications\Application;
 use click\models\Payments;
