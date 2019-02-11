@@ -12,13 +12,10 @@ composer create-project click/integration-module
 ```
 git clone https://github.com/click-llc/click-integration-php.git
 cd click-integration-php
-```
-
-## Installation and dump autoload via composer
-```
 composer install
 ```
-And you can use the our library after require `\vendor\autoload.php`
+
+And you can use the our library after require `\vendor\autoload.php` file
 ```php
 require(__DIR__ . '\vendor\autoload.php');
 ```
