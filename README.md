@@ -72,13 +72,32 @@ $model = new MyPayments();
 Prepare
 ```php
 $model->prepare([
-    ...
+    'click_trans_id' => 1111,
+    'service_id' => 2222,
+    'click_paydoc_id' => 3333,
+    'merchant_trans_id' =>  '11111',
+    'amount' => 1000.0,
+    'action' => 0,
+    'error' => 0,
+    'error_note' => 'Success',
+    'sign_time' => 'YYYY-MM-DD HH:mm:ss',
+    'sign_string' => 'AAAAAAAAAAAAAAAAAAAAAAAAAA'
 ]);
 ```
 Complete
 ```php
 $model->complete([
-    ...
+    'click_trans_id' => 1111,
+    'service_id' => 2222,
+    'click_paydoc_id' => 3333,
+    'merchant_trans_id' =>  '11111',
+    'merchant_prepare_id' => 11111,
+    'amount' => 1000.0,
+    'action' => 1,
+    'error' => 0,
+    'error_note' => 'Success',
+    'sign_time' => 'YYYY-MM-DD HH:mm:ss',
+    'sign_string' => 'AAAAAAAAAAAAAAAAAAAAAAAAAA'
 ]);
 ```
 
@@ -199,7 +218,7 @@ List of the Payments methods
 8) `on_payment_checking` and `on_payment_checked` for check payment status by merchant_id
 9) `on_checking_with_merchant_trans_id` and `on_checked_with_merchant_trans_id` for check payment status by merchant_trans_id
 
-If you want check the payment user to exist, complete
+If you want check the payment user to exists, complete
 this method
 
 ```php
