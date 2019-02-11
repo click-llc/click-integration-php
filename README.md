@@ -66,18 +66,8 @@ use click\models\Payments;
 class MyPayments extends Payments{
     ...
 }
+$model = new MyPayments();
 ```
-#### 2) Create the application for rest api
-```php
-use click\applications\Application;
-use click\models\Payments;
-
-$model = new Payments();
-$application = new Application([
-    'model' => $model
-]);
-```
-
 #### SHOP Api methods
 Prepare
 ```php
@@ -152,6 +142,16 @@ Cancel payment (reversal)
 $model->cancel([
     'token' => 'aaaa-bbbb-cccc-dddddddd',
     'payment_id' => 1111
+]);
+```
+#### 2) Create the application for rest api
+```php
+use click\applications\Application;
+use click\models\Payments;
+
+$model = new Payments();
+$application = new Application([
+    'model' => $model
 ]);
 ```
 
