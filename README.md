@@ -18,6 +18,10 @@ cd click-integration-php
 ```
 composer install
 ```
+And you can use the our library after require `\vendor\autoload.php`
+```php
+require(__DIR__ . '\vendor\autoload.php');
+```
 
 ## Documentation contents
 ### Configuration
