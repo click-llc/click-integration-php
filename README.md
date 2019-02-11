@@ -20,19 +20,6 @@ And you can use the our library after require `\vendor\autoload.php` file
 require(__DIR__ . '\vendor\autoload.php');
 ```
 
-## Documentation contents
-### Configuration
-- Click configuration
-- Database configuration
-### Quick start
-- Create model
-- Create application
-    - Application session
-    - Some basic methods to easy use
-    - Some spiecial methods
-### Advanced
-- Rewrite the methods over the Model
-
 ## Documentation
 ### Configuration
 Your can set your configurations via `click/configs.php` file.
@@ -91,7 +78,17 @@ $application = new Application([
 ]);
 ```
 
-#### Methods of Payments
+#### SHOP Api methods
+Prepare
+```php
+$model->prepare();
+```
+Complete
+```php
+$model->complete();
+```
+
+#### Merchant Api methods
 Create invoice
 ```php
 $model->create_invoice([
