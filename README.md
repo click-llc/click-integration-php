@@ -1,6 +1,7 @@
 # CLICK Integration PHP
-This is a capable to `"CLICK"` integration library, written in `PHP`.
-This library is an easy to use, powerful and rapid php integration library.
+This library allows you to integrate payment acceptance using `"CLICK"` payment system into `PHP` web applications.
+For the library to function properly, the user must be connected to Click Merchant using the Shop API scheme.
+Detailed documentation is available here `https://docs.click.uz`.
 
 ## Installation via Composer
 ```
@@ -15,7 +16,7 @@ cd click-integration-php
 composer install
 ```
 
-And you can use the our library after require `\vendor\autoload.php` file
+After installing, you need to require autoloader
 ```php
 require(__DIR__ . '\vendor\autoload.php');
 ```
@@ -60,7 +61,7 @@ You can use the `\cick\models\Payments` model
 use click\models\Payments;
 $model = new Payments();
 ```
-Or can create yourself payments model via `\click\models\Payments` class
+Or can create payments model yourself via `\click\models\Payments` class
 ```php
 use click\models\Payments;
 class MyPayments extends Payments{
@@ -102,7 +103,7 @@ $model->complete([
 ```
 
 #### Merchant Api methods
-Note : All of the merchant api methods return the CLICK-MERCHANT-API response as array-like
+Note : All of the merchant api methods return the CLICK-MERCHANT-API response as arrays
 
 Create invoice
 ```php
@@ -175,7 +176,7 @@ $model->cancel([
 use click\models\Payments;
 class MyPayments extends Payments{
     /**
-     * @param data array-like
+     * @param data array
      * @return response \GuzzleHttp\Client
      */
     public function on_invoice_creating($data){
@@ -187,10 +188,10 @@ class MyPayments extends Payments{
         return $response;
     }
     /**
-     * @param request array-like
+     * @param request array
      * @param response \GuzzleHttp\Client object
      * @param token string
-     * @return response array-like|null
+     * @return response array|null
      */
     public function on_invoice_created($request, $response, $token){
         ...
@@ -218,15 +219,14 @@ List of the Payments methods
 8) `on_payment_checking` and `on_payment_checked` for check payment status by merchant_id
 9) `on_checking_with_merchant_trans_id` and `on_checked_with_merchant_trans_id` for check payment status by merchant_trans_id
 
-If you want check the payment user to exists, complete
-this method
+If you want check whether the payment user exists, complete this method
 
 ```php
 use click\models\Payments;
 class MyPayments extends Payments{
     /**
      * @name on_user_is_exists method
-     * @param payment array-like
+     * @param payment array
      * @return response boolean|null
      */
     protected function on_user_is_exists($payment){
@@ -246,7 +246,7 @@ $application = new Application([
 ]);
 ```
 
-### 2) Create the application with application session for authtorization via token
+### 2) Create the application with application session for authorization via token
 ```php
 use click\applications\Application;
 use click\models\Payments;
@@ -261,7 +261,7 @@ Application::session('<YOUR_AUTH_TOKEN>', ['/prepare', '/complete'], function(){
 ```
 #### SHOP Api methods
 1) `/prepare` for prepare
-2) `/prepare` for prepare
+2) `/complete` for complete
 
 #### Merchant Api methods
 1) `/invoice/create` for create invoice
