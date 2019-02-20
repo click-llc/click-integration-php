@@ -3,7 +3,7 @@ This library allows you to integrate payment acceptance using `"CLICK"` payment 
 For the library to function properly, the user must be connected to Click Merchant using the Shop API scheme.
 Detailed documentation is available here __https://docs.click.uz__.
 
-![ClickLLC](https://img.shields.io/badge/Powered__by-CLICK%20LLC-green.svg?style=flat)
+![ClickLLC](https://img.shields.io/badge/Powered%20by-CLICK%20LLC-green.svg?style=flat)
 
 ## Installation via Composer
 ```
