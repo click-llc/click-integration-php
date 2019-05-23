@@ -68,7 +68,7 @@ class BasePayments extends \click\models\BasicPaymentMethods{
             }
             else{
                 $this->model->update_by_id($payment_id, [
-                    'status' => PaymentStatus::ERROR,
+                    'status' => PaymentsStatus::ERROR,
                     'status_note' => $result['error_note']
                 ]);
             }
@@ -101,19 +101,19 @@ class BasePayments extends \click\models\BasicPaymentMethods{
             if((int)$result['error_code'] == 0){
                 if((int)$result['status'] > 0){
                     $this->model->update_by_token($token, [
-                        'status' => PaymentStatus::CONFIRMED,
+                        'status' => PaymentsStatus::CONFIRMED,
                         'status_note' => $result['error_note']
                     ]);
                 }
                 else if((int)$result['status'] == -99){
                     $this->model->update_by_token($token, [
-                        'status' => PaymentStatus::REJECTED,
+                        'status' => PaymentsStatus::REJECTED,
                         'status_note' => $result['error_note']
                     ]);
                 }
                 else{
                     $this->model->update_by_token($token, [
-                        'status' => PaymentStatus::ERROR,
+                        'status' => PaymentsStatus::ERROR,
                         'status_note' => $result['error_note']
                     ]);
                 }
@@ -153,7 +153,7 @@ class BasePayments extends \click\models\BasicPaymentMethods{
             }
             else{
                 $this->model->update_by_token($token, [
-                    'status' => PaymentStatus::ERROR,
+                    'status' => PaymentsStatus::ERROR,
                     'status_note' => $result['error_note']
                 ]);
             }
@@ -194,7 +194,7 @@ class BasePayments extends \click\models\BasicPaymentMethods{
             }
             else{
                 $this->model->update_by_token($token, [
-                    'status' => PaymentStatus::ERROR,
+                    'status' => PaymentsStatus::ERROR,
                     'status_note' => $result['error_note']
                 ]);
             }
@@ -234,7 +234,7 @@ class BasePayments extends \click\models\BasicPaymentMethods{
             }
             else{
                 $this->model->update_by_token($token, [
-                    'status' => PaymentStatus::ERROR,
+                    'status' => PaymentsStatus::ERROR,
                     'status_note' => $result['error_note']
                 ]);
             }
@@ -274,7 +274,7 @@ class BasePayments extends \click\models\BasicPaymentMethods{
             }
             else{
                 $this->model->update_by_token($token, [
-                    'status' => PaymentStatus::ERROR,
+                    'status' => PaymentsStatus::ERROR,
                     'status_note' => $result['error_note']
                 ]);
             }
@@ -312,7 +312,7 @@ class BasePayments extends \click\models\BasicPaymentMethods{
             }
             else{
                 $this->model->update_by_token($token, [
-                    'status' => PaymentStatus::ERROR,
+                    'status' => PaymentsStatus::ERROR,
                     'status_note' => $result['error_note']
                 ]);
             }
@@ -373,7 +373,7 @@ class BasePayments extends \click\models\BasicPaymentMethods{
             }
             else{
                 $this->model->update_by_token($token, [
-                    'status' => PaymentStatus::ERROR,
+                    'status' => PaymentsStatus::ERROR,
                     'status_note' => $result['error_note']
                 ]);
             }
