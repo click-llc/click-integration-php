@@ -5,12 +5,6 @@ Detailed documentation is available here __https://docs.click.uz__.
 
 ![ClickLLC](https://img.shields.io/badge/Powered%20by-CLICK%20LLC-green.svg?style=flat)
 
-## Installation via Composer
-```
-cd click-integration-php
-composer create-project click/integration-module
-```
-
 ## Installation via Git
 ```
 git clone https://github.com/click-llc/click-integration-php.git
