@@ -38,7 +38,7 @@ class BasicPaymentsErrors{
             $request['service_id'] .
             $this->provider['secret_key'] .
             $request['merchant_trans_id'] .
-            ($request['action'] == 1 ? $request['merchant_prepare_id '] : '') .
+            ($request['action'] == 1 ? $request['merchant_prepare_id'] : '') .
             $request['amount'] .
             $request['action'] .
             $request['sign_time']
