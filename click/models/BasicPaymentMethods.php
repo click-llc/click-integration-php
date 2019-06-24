@@ -41,6 +41,9 @@ class BasicPaymentMethods extends \click\models\BasicPaymentsErrors{
 
         // check the request data to errors
         $result = $this->request_check($request);
+        if($result['error'] < 0){
+            return $result;
+        }
         // complete the result to response
         $result += [
             'click_trans_id' => $request['click_trans_id'],
@@ -86,6 +89,9 @@ class BasicPaymentMethods extends \click\models\BasicPaymentsErrors{
         }
         // check the request data to errors
         $result = $this->request_check($request);
+        if($result['error'] < 0){
+            return $result;
+        }
         // prepare the data to response
         $result += [
             'click_trans_id' => $request['click_trans_id'],
