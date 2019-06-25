@@ -16,11 +16,11 @@ namespace click\models;
  *      $payments = new Payments();
  *      $response = $payments->request_check($request);
  */
-class BasicPaymentsErrors{
+class BasicPaymentsErrors {
     /**
      * @name request_check
      * @param request array-like
-     * @return response array-like
+     * @return array-like
      */
     public function request_check($request){
         // check to error in request from click
@@ -61,25 +61,29 @@ class BasicPaymentsErrors{
             ];
         }
 
-        // get payment data from model
+        // get payment data by merchant_trans_id
         $payment = $this->model->find_by_merchant_trans_id($request['merchant_trans_id']);
-        if(!$payment){
-            // return response array-like
-            return [
-                'error' => -6,
-                'error_note' => 'Transaction does not exist'
-            ];
-        }
 
-        // check to user is exits
-        $is_exist_user = $this->on_user_is_exist($payment);
-        if($is_exist_user != null && $is_exist_user == false){
+        if(!$payment){
             // return response array-like
             return [
                 'error' => -5,
                 'error_note' => 'User does not exist'
             ];
         }
+
+        // get payment data by merchant_prepare_id
+        if( $request['action'] == 1 ) {
+            $payment = $this->model->find_by_id($request['merchant_prepare_id']);
+            if(!$payment){
+                // return response array-like
+                return [
+                    'error' => -6,
+                    'error_note' => 'Transaction does not exist	'
+                ];
+            }
+        }
+
 
         // check to already paid
         if($payment['status'] == PaymentsStatus::CONFIRMED){
@@ -100,7 +104,7 @@ class BasicPaymentsErrors{
         }
 
         // check status to transaction cancelled
-        if($payment['status'] == PaymentsStatus::REJECTED || $payment['status'] == PaymentsStatus::ERROR || $request['error'] < 0){
+        if($payment['status'] == PaymentsStatus::REJECTED){
             // return response array-like
             return [
                 'error' => -9,

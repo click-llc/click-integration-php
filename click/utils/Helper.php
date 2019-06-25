@@ -62,13 +62,15 @@ class Helper{
      * @return response string
      */
     private function _url(){
-        $script_name_segments = explode('/', $this->script_name);
-        unset($script_name_segments[count($script_name_segments ) - 1]);
-        $base = implode($script_name_segments, '/');
-        $base = explode($base, $this->request_url);
-        $base = $base[count($base) - 1];
-        $base = explode('?', $base)[0];
-        return $base;
+        return $_SERVER['REQUEST_URI'];
+
+//        $script_name_segments = explode('/', $this->script_name);
+//        unset($script_name_segments[count($script_name_segments ) - 1]);
+//        $base = implode($script_name_segments, '/');
+//        $base = explode($base, $this->request_url);
+//        $base = $base[count($base) - 1];
+//        $base = explode('?', $base)[0];
+//        return $base;
     }
 
     /**

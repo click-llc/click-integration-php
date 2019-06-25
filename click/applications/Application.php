@@ -159,7 +159,8 @@ class Application{
             // check the request url to accessable
             if(in_array($helper->url, $access)){
                 // calling the session body function
-                $func();
+                if(is_callable($func))
+                    $func();
             }
             // check the Auth to seted
             else if(isset($headers['Auth'])){
@@ -167,7 +168,8 @@ class Application{
                 // check the authtoization token is possible
                 if($token == $auth_token){
                     // call the session body function
-                    $func();
+                    if(is_callable($func))
+                        $func();
                 }
                 else{
                     // return exception
