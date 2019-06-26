@@ -27,7 +27,7 @@ class BasicPaymentsErrors {
         if($this->is_not_possible_data($request)){
             // return response array-like
             return [
-                'error' => -9,
+                'error' => -8,
                 'error_note' => 'Error in request from click'
             ];
         }
@@ -122,14 +122,13 @@ class BasicPaymentsErrors {
     /**
      * @name is_not_possible_data, this method used in request_check
      * @param request array-like
-     * @return respone boolean 
+     * @return boolean
      */
     private function is_not_possible_data($request){
         if(!(
             isset($request['click_trans_id']) &&
             isset($request['service_id']) &&
             isset($request['merchant_trans_id']) &&
-            isset($request['merchant_prepare_id']) &&
             isset($request['amount']) &&
             isset($request['action']) &&
             isset($request['error']) &&
@@ -137,7 +136,7 @@ class BasicPaymentsErrors {
             isset($request['sign_time']) &&
             isset($request['sign_string']) &&
             isset($request['click_paydoc_id'])
-        ) || ((int)$request['action'] > 0 && !isset($request['merchant_prepare_id']))){
+        ) || $request['action'] == 1 && ! isset($request['merchant_prepare_id'])) {
             return true;
         }
         return false;
