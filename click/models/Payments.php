@@ -529,7 +529,7 @@ class Payments extends BasePayments{
         if($this->provider == null){
             throw new ClickException(
                 'Coult not perform the request without provider',
-                ClickException::ERORR_COULD_NOT_PERFORM
+                ClickException::ERROR_COULD_NOT_PERFORM
             );
         }
 

@@ -95,7 +95,8 @@ class Application{
                 $this->response($model->delete_card_token()); break;
             default:
                 // return exception
-                throw new ClickException('Incorrect request'); break;
+                throw new ClickException('Incorrect request', ClickException::ERROR_METHOD_NOT_FOUND);
+                break;
         }
     }
 
