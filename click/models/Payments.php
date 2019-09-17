@@ -159,7 +159,6 @@ class Payments extends BasePayments{
      * @example:
      *      $model = new Payments($params);
      *      $model->create_card_token([
-     *          'token' => 'aaaa-bbbb-cccc-dddddddd',
      *          'card_number' => 'AAAA-BBBB-CCCC-DDDD',
      *          'expire_date' => 'BBEE',
      *          'temporary' => 1
