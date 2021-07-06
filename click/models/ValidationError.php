@@ -35,5 +35,5 @@ class ValidationError {
 
     const REQUEST_ERROR = -8;
 
-    const TRANSACTION_CANCELLED = -8;
+    const TRANSACTION_CANCELLED = -9;
 }
